@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('America/Toronto');
 $tableauheure =[];
-$heure =[] ;
-$minute =[];
+
+
 $h = date("H");
 $min = date("i");
 for($i = 0 ; $i < 60 ;$i++){
