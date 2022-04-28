@@ -1,20 +1,28 @@
 <?php
+date_default_timezone_set('America/Toronto');
 $tableauheure =[];
-$heure = date("h");
-$minute = date("m");
-
-for($i = 0 ; $i < 12 ;$i++){
+$heure =[] ;
+$minute =[];
+$h = date("H");
+$min = date("i");
+for($i = 0 ; $i < 60 ;$i++){
     $tableauheure[] =[];
-    for($j = 0 ; $j < 60 ;$j++){
-
-    $tableauheure[$i][] =  $i." ".$j;
-    
-    echo $tableauheure[$i][$j];
-    echo count($tableauheure);
+    for($j = 0 ; $j < 23 ;$j++){
+    $tableauheure[$i][] =  $j." ".$i;
    }
-       }
-?>
+}
 
+$tableauheure[$min][$h] = "X";
+
+
+
+
+
+
+
+
+
+?>
 
 <!DOCTYPE html>
 
@@ -24,24 +32,36 @@ for($i = 0 ; $i < 12 ;$i++){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        
+
+        table {
+            margin: auto;
+        }
+
+        td , tr {
+            border: 2px solid gray;
+            min-width: 50px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     
-    <table>
-    <?php 
-    for($i = 0; $i < count($tableauheure[$i]);$i++ ) {
-        echo "<tr>";
-        for($j = 0; $j < count($tableauheure[$j]);$j++ ) {
-            echo "<td>".$tableauheure[$i][$j]."</td>";
-
-
-        }
-        echo"</tr>";
-    }
-    
-        ?>
-    
-    </table>
+            <table>
+            <?php for ($i = 0; $i < count($tableauheure); $i++) {?>
+                <tr>
+                    <?php for ($j = 0; $j < 23; $j++) {?>
+                        <td> <?= $tableauheure[$i][$j]; ?> </td>
+                    <?php } ?>
+                </tr>
+                <?php } ?>
+            </table>
     
 </body>
 </html>
+
+
+<?php ?>
+
+
