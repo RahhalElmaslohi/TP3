@@ -47,6 +47,12 @@ $tableauheure[$min][$h] = "X";
     </style>
 </head>
 <body>
+<nav>
+        <a href="index.html">Home</a>
+        <a href="tableau.php">Table</a>
+        
+    </nav>
+    <h1>Tableau de Temps</h1>
     
             <table>
             <?php for ($i = 0; $i < count($tableauheure); $i++) {?>
